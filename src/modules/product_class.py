@@ -19,3 +19,4 @@ class Product:
         stock = int(input("📦 Product Stock: "))
         product = Product(id, name, price, stock)
         return product
+    

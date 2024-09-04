@@ -1,4 +1,4 @@
-import json
+import pickle
 
 # SalesManager class that manages a list of products and the sales made
 class SalesManager:
@@ -48,19 +48,19 @@ class SalesManager:
 
     def save_products(self, file_name):
         # File Handling (Video 18)
-        # Method to save the list of products to a file using json (Object Serialization - Video 19)
+        # Method to save the list of products to a file using pickle (Object Serialization - Video 19)
         with open(file_name, 'wb') as file:
-            json.dump(self.products, file)
+            pickle.dump(self.products, file)
             print("\n--------------------------------")
         print("\n💾 Data saved successfully! 💾")
         print("\n--------------------------------")
 
     def load_products(self, file_name):
         # File Handling (Video 18)
-        # Method to load the list of products from a file using json (Object Serialization - Video 19)
+        # Method to load the list of products from a file using pickle (Object Serialization - Video 19)
         try:
             with open(file_name, 'rb') as file:
-                self.products = json.loads(file)
+                self.products = pickle.load(file)
             print("\n📂 Data loaded successfully! 📂\n")
         except FileNotFoundError:
             print("\n--------------------------------")
